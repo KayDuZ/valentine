@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<h1>Will You Be My Valentine?</h1>
+<div id="buttons">
+  <button class="button" id="noButton">No</button>
+  <button class="button" id="yesButton">Yes</button>
+</div>
+
+<script>
+document.getElementById("noButton").addEventListener("click", function() {
+  var buttonsDiv = document.getElementById("buttons");
+  var noButton = document.getElementById("noButton");
+  var yesButton = document.getElementById("yesButton");
+
+  // Generate random position
+  var randomX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+  var randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+
+  // Set new position
+  noButton.style.position = "absolute";
+  noButton.style.left = randomX + "px";
+  noButton.style.top = randomY + "px";
+
+  // Move Yes button to keep it visible
+  var distance = 150; // pixels
+  yesButton.style.marginLeft = distance + "px";
+  yesButton.style.marginRight = distance + "px";
+});
+</script>
+</body>
+</html>
