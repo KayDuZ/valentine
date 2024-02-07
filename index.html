@@ -44,6 +44,16 @@ document.getElementById("noButton").addEventListener("click", function() {
   yesButton.style.marginLeft = distance + "px";
   yesButton.style.marginRight = distance + "px";
 });
+
+document.getElementById("yesButton").addEventListener("click", function() {
+  // Create a new element for the message
+  var message = document.createElement("h2");
+  message.textContent = "YAAAAAYYY!!!";
+  message.style.color = "green";
+
+  // Append the message to the body
+  document.body.appendChild(message);
+});
 </script>
 </body>
 </html>
